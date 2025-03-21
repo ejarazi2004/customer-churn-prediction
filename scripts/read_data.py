@@ -3,10 +3,10 @@ import kaggle
 import zipfile
 import pandas as pd
 
-RAW_DARA_DIR = "data/raw/"
+RAW_DATA_DIR = "data/raw/"
 
 def load_dataset(filename: str):
-    file_path = os.path.join(RAW_DARA_DIR, filename)
+    file_path = os.path.join(RAW_DATA_DIR, filename)
     
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"The file {filename} was not found in {RAW_DARA_DIR}.")
