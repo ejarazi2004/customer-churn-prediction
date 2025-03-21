@@ -1,2 +1,12 @@
-"data/" 
-"models/" 
+# Ignore all data files and models
+data/
+models/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore results (if not committing images)
+results/**/*.png
