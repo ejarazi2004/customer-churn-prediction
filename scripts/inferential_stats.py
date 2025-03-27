@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from scripts.save_utils import save_fig
 
 
-def chi_square_test(data, feature, target='churn', save_plot=False):
+def chi_square_test(data, feature, target='churn', save_plot=False, rotate_x=False):
     contigency = pd.crosstab(data[feature], data[target])
     chi2, p, dof, expected = stats.chi2_contingency(contigency)
     
@@ -21,6 +21,8 @@ def chi_square_test(data, feature, target='churn', save_plot=False):
     if save_plot: 
         plt.figure(figsize=(6, 4))
         sns.countplot(data=data, x=feature, hue=target)
+        if rotate_x:
+            plt.xticks(rotation=45, ha="right")
         plt.title(f"{feature.title()} vs {target.title()}")
         plt.tight_layout
         save_fig(subfolder="inferential",filename=f"inf-stat-{feature}-vs-{target}")
