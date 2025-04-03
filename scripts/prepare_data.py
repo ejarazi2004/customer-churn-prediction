@@ -16,13 +16,13 @@ def prepare_data(data_path):
     X_train_preprocessed = preprocessor.transform(X_train)
     X_test_preprocessed = preprocessor.transform(X_test)
     
-    return X_train_preprocessed, X_test_preprocessed, y_train, y_test
+    return X_train_preprocessed, X_test_preprocessed, y_train, y_test, preprocessor
 
 #If script is run once through the terminal
 if __name__ == "__main__":
     DATA_PATH = "../data/raw/Bank Customer Churn Prediction.csv"
     
-    X_train_p, X_test_p, y_train, y_test = prepare_data(DATA_PATH)
+    X_train_p, X_test_p, y_train, y_test, pipeline = prepare_data(DATA_PATH)
     
     print("Train transformed shape:", X_train_p.shape)
     print("Test transformed shape: ", X_test_p.shape)
