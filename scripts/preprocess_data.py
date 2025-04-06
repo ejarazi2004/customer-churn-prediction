@@ -8,7 +8,10 @@ def build_preproc_pipeline():
     num_features = [
         'credit_score', 'age', 
         'tenure', 'balance', 
-        'products_number', 'estimated_salary'
+        'products_number', 'estimated_salary',
+        'is_old_inactive', 'is_young_active',
+        'is_high_balance_short_tenure', 'is_low_product_inactive',
+        'is_german_customer'    
     ]
     
     cat_featurs = [
@@ -17,9 +20,6 @@ def build_preproc_pipeline():
     
     pasthrough_features = [
         'credit_card', 'active_member',
-        'is_old_inactive', 'is_young_and_active',
-        'is_high_balance_short_tenure', 'is_low_product_and_inactive',
-        'is_german_customer'    
     ]
     
     #Pipeline for numerical features
@@ -41,7 +41,6 @@ def build_preproc_pipeline():
     
     #Full pipeline including feature engineering(first) 
     #and preprocessing
-    
     full_pipeline = Pipeline(steps=[
         ('feature_engineering', FeatureEngineeringTransformer()),
         ('preprocessor', column_transformer)

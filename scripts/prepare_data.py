@@ -1,6 +1,6 @@
 import pandas as pd
 from split_data import load_split_data
-from preprocess_data import build_preproc_pipeline
+from scripts.preprocess_data import build_preproc_pipeline
 
 def prepare_data(data_path):
     #Loading the split datasets
