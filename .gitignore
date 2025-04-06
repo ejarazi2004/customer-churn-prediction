@@ -10,3 +10,4 @@ __pycache__/
 
 # Ignore results (if not committing images)
 results/**/*.png
+results/**/*.json
