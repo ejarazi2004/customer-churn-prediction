@@ -50,7 +50,7 @@ def objective(trial):
 
 def tune_xgboost():
     study = optuna.create_study(direction="maximize")
-    study.optimize(objective, n_trials=200)
+    study.optimize(objective, n_trials=1000)
 
     best_score = study.best_value
     best_params = study.best_params
